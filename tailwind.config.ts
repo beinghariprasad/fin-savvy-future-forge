@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +65,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Financial theme colors
+				financial: {
+					blue: 'hsl(var(--financial-blue))',
+					'blue-light': 'hsl(var(--financial-blue-light))',
+					gold: 'hsl(var(--financial-gold))',
+					'gold-light': 'hsl(var(--financial-gold-light))',
+					success: 'hsl(var(--financial-success))',
+					'success-light': 'hsl(var(--financial-success-light))',
+					chart: {
+						1: 'hsl(var(--chart-1))',
+						2: 'hsl(var(--chart-2))',
+						3: 'hsl(var(--chart-3))',
+						4: 'hsl(var(--chart-4))',
+						5: 'hsl(var(--chart-5))'
+					}
 				}
 			},
 			borderRadius: {
@@ -88,7 +108,37 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-in-up': 'slide-in-up 0.6s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
+			},
+			keyframes: {
+				'accordion-down': {
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
+				},
+				'accordion-up': {
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(40px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow': {
+					'0%': { boxShadow: '0 0 20px hsl(var(--financial-blue) / 0.3)' },
+					'100%': { boxShadow: '0 0 40px hsl(var(--financial-blue) / 0.6)' }
+				}
 			}
 		}
 	},

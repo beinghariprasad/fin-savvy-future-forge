@@ -1,13 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { HeroSection } from '@/components/home/HeroSection';
+import { CalculatorPreview } from '@/components/home/CalculatorPreview';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>Fin Tools Lab - Professional Financial Calculators & Investment Tools</title>
+        <meta 
+          name="description" 
+          content="Free professional financial calculators including compound interest, mortgage, loan, retirement, and investment tools. Make informed financial decisions with our modern, mobile-friendly calculators." 
+        />
+        <meta name="keywords" content="financial calculator, compound interest, mortgage calculator, investment tools, retirement calculator, loan calculator, financial planning" />
+        <link rel="canonical" href="https://fintoolslab.com" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://fintoolslab.com" />
+        <meta property="og:title" content="Fin Tools Lab - Professional Financial Calculators" />
+        <meta property="og:description" content="Free professional financial calculators including compound interest, mortgage, loan, retirement, and investment tools." />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://fintoolslab.com" />
+        <meta property="twitter:title" content="Fin Tools Lab - Professional Financial Calculators" />
+        <meta property="twitter:description" content="Free professional financial calculators including compound interest, mortgage, loan, retirement, and investment tools." />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>
+          <HeroSection />
+          <CalculatorPreview />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
