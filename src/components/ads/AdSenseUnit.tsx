@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 interface AdSenseUnitProps {
   adSlot: string;
@@ -7,7 +7,7 @@ interface AdSenseUnitProps {
   style?: React.CSSProperties;
 }
 
-// Note: Replace 'ca-pub-0000000000000000' with your actual AdSense publisher ID
+// Note: Replace with your actual AdSense publisher ID
 const ADSENSE_CLIENT = 'ca-pub-0000000000000000';
 
 export const AdSenseUnit = ({ 
@@ -16,19 +16,26 @@ export const AdSenseUnit = ({
   className = '',
   style = {} 
 }: AdSenseUnitProps) => {
-  const adRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    try {
-      // Check if AdSense script is loaded
-      if (typeof (window as any).adsbygoogle !== 'undefined') {
-        // Push the ad to AdSense queue
+    // Only initialize AdSense in production with valid publisher ID
+    if (ADSENSE_CLIENT !== 'ca-pub-0000000000000000' && typeof window !== 'undefined') {
+      try {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      } catch (error) {
+        // Silently handle AdSense errors in development
       }
-    } catch (error) {
-      console.error('AdSense error:', error);
     }
   }, []);
+
+  // Don't render ads in development or with invalid publisher ID
+  if (ADSENSE_CLIENT === 'ca-pub-0000000000000000') {
+    return (
+      <div className={`ad-container ${className}`} style={style}>
+        <span className="text-muted-foreground">Ad Space - Replace with your AdSense Publisher ID</span>
+      </div>
+    );
+  }
 
   return (
     <div className={`ad-container ${className}`} style={style}>

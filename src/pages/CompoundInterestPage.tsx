@@ -87,37 +87,34 @@ export default function CompoundInterestPage() {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        {/* Header Ad */}
-        <HeaderAd />
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="container mx-auto container-padding section-padding">
           {/* Calculator */}
           <CompoundInterestCalculator />
 
           {/* Educational Content */}
-          <div className="mt-20 space-y-12">
-            <div className="text-center">
-              <h2 className="text-3xl font-playfair font-bold mb-4">
+          <div className="mt-16 space-y-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 Understanding Compound Interest
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Learn how compound interest works and why it's one of the most powerful concepts in finance
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Learn how compound interest works and why it's powerful for building wealth
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {educationalContent.map((item, index) => (
                 <Card key={item.title} className="financial-card">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-financial-blue/10 rounded-xl flex items-center justify-center">
-                        <item.icon className="h-5 w-5 text-primary" />
+                  <CardHeader className="pb-3">
+                    <CardTitle className="flex items-center gap-3 text-lg">
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <item.icon className="h-4 w-4 text-primary" />
                       </div>
                       {item.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">{item.content}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.content}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -125,23 +122,23 @@ export default function CompoundInterestPage() {
 
             {/* Tips Section */}
             <Card className="financial-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-financial-gold/10 to-financial-gold-light/10 rounded-xl flex items-center justify-center">
-                    <Lightbulb className="h-5 w-5 text-financial-gold" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <div className="w-8 h-8 bg-financial-gold/10 rounded-lg flex items-center justify-center">
+                    <Lightbulb className="h-4 w-4 text-financial-gold" />
                   </div>
                   Investment Tips
                 </CardTitle>
-                <CardDescription>
-                  Maximize the power of compound interest with these proven strategies
+                <CardDescription className="text-sm">
+                  Maximize the power of compound interest with these strategies
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="grid md:grid-cols-2 gap-3">
+                <ul className="grid md:grid-cols-2 gap-2">
                   {tips.map((tip, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-financial-gold rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{tip}</span>
+                    <li key={index} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-financial-gold rounded-full mt-1.5 flex-shrink-0" />
+                      <span className="text-muted-foreground text-sm">{tip}</span>
                     </li>
                   ))}
                 </ul>
@@ -150,34 +147,33 @@ export default function CompoundInterestPage() {
 
             {/* Formula Section */}
             <Card className="financial-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-financial-success/10 to-financial-success-light/10 rounded-xl flex items-center justify-center">
-                    <Calculator className="h-5 w-5 text-financial-success" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <div className="w-8 h-8 bg-financial-success/10 rounded-lg flex items-center justify-center">
+                    <Calculator className="h-4 w-4 text-financial-success" />
                   </div>
                   Compound Interest Formula
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-muted/50 rounded-lg p-6 mb-4">
-                  <p className="text-center text-lg font-mono mb-4">
+                <div className="bg-muted/30 rounded-lg p-4 mb-3">
+                  <p className="text-center text-lg font-mono mb-3">
                     A = P(1 + r/n)<sup>nt</sup>
                   </p>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div className="grid md:grid-cols-2 gap-3 text-sm">
                     <div>
                       <strong>A</strong> = Final amount<br />
-                      <strong>P</strong> = Principal (initial investment)<br />
-                      <strong>r</strong> = Annual interest rate (decimal)
+                      <strong>P</strong> = Principal<br />
+                      <strong>r</strong> = Annual rate
                     </div>
                     <div>
-                      <strong>n</strong> = Number of times interest compounds per year<br />
+                      <strong>n</strong> = Compounds per year<br />
                       <strong>t</strong> = Number of years
                     </div>
                   </div>
                 </div>
-                <p className="text-muted-foreground">
-                  This formula calculates the final amount when interest is compounded at regular intervals. 
-                  Our calculator uses this formula along with additional contributions to provide accurate projections.
+                <p className="text-muted-foreground text-sm">
+                  This formula calculates compound interest growth. Our calculator includes additional contributions for accurate projections.
                 </p>
               </CardContent>
             </Card>

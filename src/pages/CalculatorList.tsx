@@ -102,28 +102,25 @@ export default function CalculatorList() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Ad */}
-      <HeaderAd />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto container-padding section-padding">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-4 bg-gradient-to-r from-primary to-financial-blue bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Financial Calculators
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional-grade financial calculators to help you make informed decisions about your money. 
-            All tools are free, accurate, and designed for real-world use.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Professional financial tools to help you make informed decisions about your money.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-6">
           {/* Filters Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1">
+            <div className="space-y-4 sticky top-4">
             <Card className="financial-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Filter className="h-5 w-5" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Filter className="h-4 w-4" />
                   Filters
                 </CardTitle>
               </CardHeader>
@@ -177,41 +174,38 @@ export default function CalculatorList() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Sidebar Ad */}
-            <SidebarAd />
+            </div>
           </div>
 
           {/* Calculator Grid */}
           <div className="lg:col-span-3">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4">
               {filteredCalculators.map((calculator, index) => (
                 <Card 
                   key={calculator.id} 
-                  className="financial-card group hover:shadow-xl transition-all duration-500 relative overflow-hidden"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="financial-card group hover:shadow-lg transition-all duration-200 relative"
                 >
                   {calculator.popular && (
-                    <Badge className="absolute top-4 right-4 bg-financial-gold text-white z-10">
+                    <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs">
                       Popular
                     </Badge>
                   )}
                   
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${calculator.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <calculator.icon className="h-6 w-6 text-white" />
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${calculator.color} flex items-center justify-center`}>
+                        <calculator.icon className="h-5 w-5 text-white" />
                       </div>
-                      <div className="flex gap-2">
-                        <Badge variant="secondary" className="text-xs">
+                      <div className="flex gap-1">
+                        <Badge variant="secondary" className="text-xs px-2 py-1">
                           {calculator.category}
                         </Badge>
                         <Badge 
                           variant="outline" 
-                          className={`text-xs ${
-                            calculator.difficulty === 'Beginner' ? 'border-financial-success text-financial-success' :
-                            calculator.difficulty === 'Intermediate' ? 'border-financial-gold text-financial-gold' :
-                            'border-red-500 text-red-500'
+                          className={`text-xs px-2 py-1 ${
+                            calculator.difficulty === 'Beginner' ? 'border-green-500 text-green-600' :
+                            calculator.difficulty === 'Intermediate' ? 'border-yellow-500 text-yellow-600' :
+                            'border-red-500 text-red-600'
                           }`}
                         >
                           {calculator.difficulty}
@@ -219,19 +213,19 @@ export default function CalculatorList() {
                       </div>
                     </div>
                     
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">
                       {calculator.title}
                     </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
+                    <CardDescription className="text-sm leading-relaxed text-muted-foreground">
                       {calculator.description}
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4">
-                    <div className="grid grid-cols-2 gap-2">
+                  <CardContent className="pt-0">
+                    <div className="grid grid-cols-2 gap-1 mb-4">
                       {calculator.features.slice(0, 4).map((feature) => (
-                        <div key={feature} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0" />
+                        <div key={feature} className="flex items-center text-xs text-muted-foreground">
+                          <div className="w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0" />
                           <span className="truncate">{feature}</span>
                         </div>
                       ))}
@@ -239,11 +233,12 @@ export default function CalculatorList() {
                     
                     <Button 
                       asChild 
-                      className="w-full group/btn gradient-primary text-white hover:shadow-lg transition-all duration-300"
+                      className="w-full gradient-primary text-white hover:opacity-90 transition-opacity"
+                      size="sm"
                     >
                       <Link to={calculator.href}>
                         Open Calculator
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 h-3 w-3" />
                       </Link>
                     </Button>
                   </CardContent>
@@ -252,11 +247,11 @@ export default function CalculatorList() {
             </div>
 
             {filteredCalculators.length === 0 && (
-              <div className="text-center py-12">
-                <Calculator className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">No calculators found</h3>
-                <p className="text-muted-foreground">
-                  Try adjusting your search criteria or filters to find more calculators.
+              <div className="text-center py-8 col-span-2">
+                <Calculator className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
+                <h3 className="text-lg font-medium mb-2">No calculators found</h3>
+                <p className="text-muted-foreground text-sm">
+                  Try adjusting your search criteria or filters.
                 </p>
               </div>
             )}

@@ -160,29 +160,29 @@ export const CompoundInterestCalculator = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-playfair font-bold bg-gradient-to-r from-primary to-financial-blue bg-clip-text text-transparent">
+      <div className="text-center space-y-3">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground">
           Compound Interest Calculator
         </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Discover the power of compound interest. See how your investments can grow over time with our advanced calculator featuring interactive charts and detailed projections.
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          See how your investments grow over time with our advanced calculator and interactive charts.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-6">
         {/* Calculator Form */}
         <div className="lg:col-span-1">
-          <Card className="financial-card sticky top-24">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calculator className="h-5 w-5 text-primary" />
+          <Card className="financial-card sticky top-20">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-lg">
+                <Calculator className="h-4 w-4 text-primary" />
                 Investment Calculator
               </CardTitle>
-              <CardDescription>
-                Enter your investment details to see projected growth
+              <CardDescription className="text-sm">
+                Enter your details to see projected growth
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4">
               {/* Currency Selection */}
               <div className="space-y-2">
                 <Label htmlFor="currency">Currency</Label>
@@ -306,8 +306,8 @@ export const CompoundInterestCalculator = () => {
 
               <Button 
                 onClick={calculateCompoundInterest}
-                className="w-full gradient-primary text-white hover:shadow-lg transition-all duration-300"
-                size="lg"
+                className="w-full gradient-primary text-white hover:opacity-90 transition-opacity"
+                size="sm"
               >
                 <TrendingUp className="h-4 w-4 mr-2" />
                 Calculate Growth
@@ -317,44 +317,41 @@ export const CompoundInterestCalculator = () => {
         </div>
 
         {/* Results */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-2 space-y-6">
           {result && (
             <>
               {/* Summary Cards */}
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-3 gap-3">
                 <Card className="financial-card">
-                  <CardContent className="p-6 text-center">
-                    <DollarSign className="h-8 w-8 text-financial-blue mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground">Final Amount</p>
-                    <p className="text-2xl font-bold text-financial-blue">
+                  <CardContent className="p-4 text-center">
+                    <DollarSign className="h-6 w-6 text-financial-blue mx-auto mb-2" />
+                    <p className="text-xs text-muted-foreground">Final Amount</p>
+                    <p className="text-xl font-bold text-financial-blue">
                       {formatCurrency(result.totalAmount)}
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card className="financial-card">
-                  <CardContent className="p-6 text-center">
-                    <Calendar className="h-8 w-8 text-financial-gold mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground">Total Invested</p>
-                    <p className="text-2xl font-bold text-financial-gold">
+                  <CardContent className="p-4 text-center">
+                    <Calendar className="h-6 w-6 text-financial-gold mx-auto mb-2" />
+                    <p className="text-xs text-muted-foreground">Total Invested</p>
+                    <p className="text-xl font-bold text-financial-gold">
                       {formatCurrency(result.totalContributions)}
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card className="financial-card">
-                  <CardContent className="p-6 text-center">
-                    <Percent className="h-8 w-8 text-financial-success mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground">Interest Earned</p>
-                    <p className="text-2xl font-bold text-financial-success">
+                  <CardContent className="p-4 text-center">
+                    <Percent className="h-6 w-6 text-financial-success mx-auto mb-2" />
+                    <p className="text-xs text-muted-foreground">Interest Earned</p>
+                    <p className="text-xl font-bold text-financial-success">
                       {formatCurrency(result.totalInterest)}
                     </p>
                   </CardContent>
                 </Card>
               </div>
-
-              {/* Ad Placement */}
-              <InContentAd />
 
               {/* Charts */}
               <Tabs defaultValue="growth" className="w-full">
@@ -363,16 +360,16 @@ export const CompoundInterestCalculator = () => {
                   <TabsTrigger value="breakdown">Breakdown Chart</TabsTrigger>
                 </TabsList>
                 
-                <TabsContent value="growth" className="space-y-4">
+                <TabsContent value="growth">
                   <Card className="financial-card">
-                    <CardHeader>
-                      <CardTitle>Investment Growth Over Time</CardTitle>
-                      <CardDescription>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg">Investment Growth Over Time</CardTitle>
+                      <CardDescription className="text-sm">
                         See how your investment grows with compound interest
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="h-80">
+                      <div className="h-64">
                         <ResponsiveContainer width="100%" height="100%">
                           <LineChart data={result.yearlyData}>
                             <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -389,9 +386,9 @@ export const CompoundInterestCalculator = () => {
                               type="monotone" 
                               dataKey="total" 
                               stroke="hsl(var(--financial-blue))" 
-                              strokeWidth={3}
-                              dot={{ fill: 'hsl(var(--financial-blue))', strokeWidth: 2, r: 4 }}
-                              activeDot={{ r: 6, stroke: 'hsl(var(--financial-blue))', strokeWidth: 2 }}
+                              strokeWidth={2}
+                              dot={{ fill: 'hsl(var(--financial-blue))', strokeWidth: 1, r: 3 }}
+                              activeDot={{ r: 4, stroke: 'hsl(var(--financial-blue))', strokeWidth: 1 }}
                             />
                           </LineChart>
                         </ResponsiveContainer>
@@ -400,16 +397,16 @@ export const CompoundInterestCalculator = () => {
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="breakdown" className="space-y-4">
+                <TabsContent value="breakdown">
                   <Card className="financial-card">
-                    <CardHeader>
-                      <CardTitle>Principal vs Interest Breakdown</CardTitle>
-                      <CardDescription>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg">Principal vs Interest Breakdown</CardTitle>
+                      <CardDescription className="text-sm">
                         Visualize the contribution of principal and compound interest
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="h-80">
+                      <div className="h-64">
                         <ResponsiveContainer width="100%" height="100%">
                           <AreaChart data={result.yearlyData}>
                             <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
@@ -428,7 +425,7 @@ export const CompoundInterestCalculator = () => {
                               stackId="1"
                               stroke="hsl(var(--financial-gold))"
                               fill="hsl(var(--financial-gold))"
-                              fillOpacity={0.8}
+                              fillOpacity={0.6}
                             />
                             <Area
                               type="monotone"
@@ -436,7 +433,7 @@ export const CompoundInterestCalculator = () => {
                               stackId="1"
                               stroke="hsl(var(--financial-success))"
                               fill="hsl(var(--financial-success))"
-                              fillOpacity={0.8}
+                              fillOpacity={0.6}
                             />
                           </AreaChart>
                         </ResponsiveContainer>
