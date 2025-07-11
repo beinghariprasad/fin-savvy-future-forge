@@ -9,60 +9,60 @@ const calculators = [
   {
     id: 'compound-interest',
     title: 'Compound Interest Calculator',
-    description: 'Calculate how your investments grow with compound interest over time',
+    description: 'Watch your investments grow with the power of compound interest',
     icon: TrendingUp,
-    color: 'from-financial-blue to-financial-blue-light',
-    features: ['Interactive charts', 'Multiple currencies', 'Flexible contributions'],
+    gradient: 'from-primary to-violet',
+    features: ['Real-time charts', 'Multiple currencies', 'Smart projections'],
     popular: true,
     href: '/calculators/compound-interest'
   },
   {
     id: 'mortgage',
     title: 'Mortgage Calculator',
-    description: 'Calculate monthly payments, total interest, and amortization schedules',
+    description: 'Plan your home purchase with detailed payment breakdowns',
     icon: Home,
-    color: 'from-financial-gold to-financial-gold-light',
-    features: ['Amortization table', 'PMI calculations', 'Extra payments'],
+    gradient: 'from-emerald to-cyan',
+    features: ['Payment schedules', 'Tax calculations', 'Rate comparisons'],
     popular: false,
     href: '/calculators/mortgage'
   },
   {
     id: 'loan',
     title: 'Loan Calculator',
-    description: 'Calculate loan payments for personal loans, auto loans, and more',
+    description: 'Compare loan options and optimize your repayment strategy',
     icon: DollarSign,
-    color: 'from-financial-success to-financial-success-light',
-    features: ['Payment schedules', 'Interest breakdown', 'Early payoff'],
+    gradient: 'from-orange to-amber',
+    features: ['Payment analysis', 'Interest savings', 'Payoff strategies'],
     popular: false,
     href: '/calculators/loan'
   },
   {
     id: 'investment',
     title: 'Investment Calculator',
-    description: 'Analyze investment returns with different scenarios and timeframes',
+    description: 'Model portfolio performance with advanced risk analysis',
     icon: PiggyBank,
-    color: 'from-purple-500 to-purple-600',
-    features: ['Portfolio analysis', 'Risk assessment', 'Goal tracking'],
+    gradient: 'from-violet to-rose',
+    features: ['Portfolio modeling', 'Risk metrics', 'Goal tracking'],
     popular: false,
     href: '/calculators/investment'
   },
   {
     id: 'retirement',
     title: 'Retirement Calculator',
-    description: 'Plan for retirement with comprehensive savings and withdrawal analysis',
+    description: 'Build a comprehensive retirement plan with confidence',
     icon: Target,
-    color: 'from-emerald-500 to-emerald-600',
-    features: ['Retirement planning', '401k analysis', 'Withdrawal strategies'],
+    gradient: 'from-cyan to-emerald',
+    features: ['Retirement planning', '401k optimization', 'Income strategies'],
     popular: false,
     href: '/calculators/retirement'
   },
   {
     id: 'savings',
     title: 'Savings Goal Calculator',
-    description: 'Calculate how much to save monthly to reach your financial goals',
+    description: 'Turn your financial dreams into achievable monthly targets',
     icon: Calculator,
-    color: 'from-orange-500 to-orange-600',
-    features: ['Goal tracking', 'Timeline planning', 'Savings strategies'],
+    gradient: 'from-rose to-orange',
+    features: ['Goal setting', 'Progress tracking', 'Smart strategies'],
     popular: false,
     href: '/calculators/savings'
   }
@@ -70,91 +70,123 @@ const calculators = [
 
 export const CalculatorPreview = () => {
   return (
-    <section className="py-20 lg:py-32 bg-muted/30">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-background to-accent/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-4">
-            Professional Financial Calculators
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald/10 to-cyan/10 border border-emerald/20 mb-6">
+            <span className="text-sm font-medium text-emerald">🚀 Interactive Financial Tools</span>
+          </div>
+          
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-primary to-emerald bg-clip-text text-transparent">
+              Powerful Calculators
+            </span>
+            <br />
+            <span className="text-foreground">Built for Success</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Comprehensive suite of financial tools to help you make informed decisions about your money
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            Make smarter financial decisions with our comprehensive suite of interactive calculators and real-time analytics
           </p>
           
           {/* Preview Image */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <img
-              src={calculatorPreview}
-              alt="Calculator Interface Preview"
-              className="w-full h-auto rounded-2xl shadow-2xl border border-border"
-            />
+          <div className="max-w-5xl mx-auto mb-16">
+            <div className="glass-card p-6 hover-lift">
+              <img
+                src={calculatorPreview}
+                alt="Calculator Interface Preview"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
           </div>
         </div>
 
         {/* Calculator Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {calculators.map((calculator, index) => (
-            <Card 
+            <div 
               key={calculator.id} 
-              className="financial-card group hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              className="group hover-lift"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {calculator.popular && (
-                <Badge className="absolute top-4 right-4 bg-financial-gold text-white">
-                  Most Popular
-                </Badge>
-              )}
-              
-              <CardHeader>
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${calculator.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <calculator.icon className="h-6 w-6 text-white" />
-                </div>
+              <div className="gradient-card h-full relative overflow-hidden">
+                {calculator.popular && (
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-amber to-orange text-white text-sm font-medium rounded-full shadow-lg">
+                    ⭐ Popular
+                  </div>
+                )}
                 
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                  {calculator.title}
-                </CardTitle>
-                <CardDescription className="text-base">
-                  {calculator.description}
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  {calculator.features.map((feature) => (
-                    <div key={feature} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
+                <CardHeader className="pb-4">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${calculator.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <calculator.icon className="h-8 w-8 text-white" />
+                  </div>
+                  
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors mb-2">
+                    {calculator.title}
+                  </CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
+                    {calculator.description}
+                  </CardDescription>
+                </CardHeader>
                 
-                <Button 
-                  asChild 
-                  className="w-full group/btn"
-                  variant="outline"
-                >
-                  <Link to={calculator.href}>
-                    Try Calculator
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    {calculator.features.map((feature, featureIndex) => (
+                      <div key={feature} className="flex items-center text-sm">
+                        <div className={`w-2 h-2 rounded-full mr-3 ${
+                          featureIndex === 0 ? 'bg-emerald' : 
+                          featureIndex === 1 ? 'bg-violet' : 'bg-orange'
+                        }`} />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button 
+                    asChild 
+                    className="w-full group/btn bg-gradient-to-r from-primary to-violet hover:from-primary/90 hover:to-violet/90 text-white border-0 h-12"
+                  >
+                    <Link to={calculator.href}>
+                      Explore Calculator
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <Button 
-            asChild 
-            size="lg" 
-            className="gradient-primary text-white hover:shadow-xl hover:shadow-primary/25 transition-all duration-300"
-          >
-            <Link to="/calculators">
-              View All Calculators
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="max-w-2xl mx-auto mb-8">
+            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Financial Planning?</h3>
+            <p className="text-lg text-muted-foreground">Join thousands of users who trust our calculators for their financial decisions</p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              asChild 
+              size="lg" 
+              className="gradient-blue text-white hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 h-14 px-8"
+            >
+              <Link to="/calculators">
+                Explore All Calculators
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            
+            <Button 
+              asChild 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 h-14 px-8"
+            >
+              <Link to="/about">
+                Learn More
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

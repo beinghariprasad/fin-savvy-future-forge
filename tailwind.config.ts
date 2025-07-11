@@ -66,21 +66,38 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Financial theme colors
-				financial: {
-					blue: 'hsl(var(--financial-blue))',
-					'blue-light': 'hsl(var(--financial-blue-light))',
-					gold: 'hsl(var(--financial-gold))',
-					'gold-light': 'hsl(var(--financial-gold-light))',
-					success: 'hsl(var(--financial-success))',
-					'success-light': 'hsl(var(--financial-success-light))',
-					chart: {
-						1: 'hsl(var(--chart-1))',
-						2: 'hsl(var(--chart-2))',
-						3: 'hsl(var(--chart-3))',
-						4: 'hsl(var(--chart-4))',
-						5: 'hsl(var(--chart-5))'
-					}
+				// Modern color palette
+				emerald: {
+					DEFAULT: 'hsl(var(--emerald))',
+					light: 'hsl(var(--emerald-light))',
+				},
+				violet: {
+					DEFAULT: 'hsl(var(--violet))',
+					light: 'hsl(var(--violet-light))',
+				},
+				orange: {
+					DEFAULT: 'hsl(var(--orange))',
+					light: 'hsl(var(--orange-light))',
+				},
+				rose: {
+					DEFAULT: 'hsl(var(--rose))',
+					light: 'hsl(var(--rose-light))',
+				},
+				cyan: {
+					DEFAULT: 'hsl(var(--cyan))',
+					light: 'hsl(var(--cyan-light))',
+				},
+				amber: {
+					DEFAULT: 'hsl(var(--amber))',
+					light: 'hsl(var(--amber-light))',
+				},
+				chart: {
+					1: 'hsl(var(--chart-1))',
+					2: 'hsl(var(--chart-2))',
+					3: 'hsl(var(--chart-3))',
+					4: 'hsl(var(--chart-4))',
+					5: 'hsl(var(--chart-5))',
+					6: 'hsl(var(--chart-6))'
 				}
 			},
 			borderRadius: {
