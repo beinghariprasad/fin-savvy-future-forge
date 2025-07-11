@@ -8,122 +8,126 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Bright Modern Design System */
-    --background: 255 255 255;
-    --foreground: 15 23 42;
+    /* Ultra Clean Design System */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
 
-    --card: 255 255 255;
-    --card-foreground: 15 23 42;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
 
-    --primary: 37 99 235;
-    --primary-foreground: 248 250 252;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 241 245 249;
-    --secondary-foreground: 51 65 85;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 248 250 252;
-    --accent-foreground: 29 78 216;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 226 232 240;
-    --input: 255 255 255;
-    --ring: 37 99 235;
+    --border: 214 32% 91%;
+    --input: 0 0% 100%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
-    /* Fresh Color Palette */
-    --emerald: 16 185 129;
-    --emerald-light: 52 211 153;
-    --violet: 139 92 246;
-    --violet-light: 167 139 250;
-    --orange: 249 115 22;
-    --orange-light: 251 146 60;
-    --rose: 244 63 94;
-    --rose-light: 251 113 133;
-    --cyan: 6 182 212;
-    --cyan-light: 34 211 238;
-    --amber: 245 158 11;
-    --amber-light: 251 191 36;
+    /* Modern Vibrant Palette */
+    --blue: 221 83% 53%;
+    --blue-light: 213 94% 68%;
+    --emerald: 158 64% 52%;
+    --emerald-light: 152 76% 64%;
+    --violet: 262 83% 58%;
+    --violet-light: 258 90% 66%;
+    --orange: 25 95% 53%;
+    --orange-light: 31 91% 60%;
+    --rose: 330 81% 60%;
+    --rose-light: 334 91% 73%;
+    --cyan: 189 85% 52%;
+    --cyan-light: 187 85% 70%;
+    --amber: 48 96% 53%;
+    --amber-light: 54 91% 68%;
 
-    /* Chart Colors - Vibrant */
-    --chart-1: 37 99 235;
-    --chart-2: 16 185 129;
-    --chart-3: 249 115 22;
-    --chart-4: 139 92 246;
-    --chart-5: 244 63 94;
-    --chart-6: 6 182 212;
+    /* Chart Colors - High Contrast */
+    --chart-1: 221 83% 53%;
+    --chart-2: 158 64% 52%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 262 83% 58%;
+    --chart-5: 330 81% 60%;
+    --chart-6: 189 85% 52%;
 
     /* Sidebar */
-    --sidebar-background: 248 250 252;
-    --sidebar-foreground: 51 65 85;
-    --sidebar-primary: 37 99 235;
-    --sidebar-primary-foreground: 248 250 252;
-    --sidebar-accent: 241 245 249;
-    --sidebar-accent-foreground: 51 65 85;
-    --sidebar-border: 226 232 240;
-    --sidebar-ring: 37 99 235;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 221 83% 53%;
   }
 
   .dark {
-    --background: 8 8 16;
-    --foreground: 248 250 252;
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 15 23 42;
-    --card-foreground: 248 250 252;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 15 23 42;
-    --popover-foreground: 248 250 252;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 99 102 241;
-    --primary-foreground: 15 23 42;
+    --primary: 213 94% 68%;
+    --primary-foreground: 222 84% 5%;
 
-    --secondary: 30 41 59;
-    --secondary-foreground: 203 213 225;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 30 41 59;
-    --muted-foreground: 148 163 184;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 51 65 85;
-    --accent-foreground: 226 232 240;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 220 38 38;
-    --destructive-foreground: 248 250 252;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 51 65 85;
-    --input: 30 41 59;
-    --ring: 99 102 241;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 94% 68%;
 
     /* Dark Theme Colors */
-    --emerald: 52 211 153;
-    --emerald-light: 110 231 183;
-    --violet: 167 139 250;
-    --violet-light: 196 181 253;
-    --orange: 251 146 60;
-    --orange-light: 254 215 170;
-    --rose: 251 113 133;
-    --rose-light: 253 164 175;
-    --cyan: 34 211 238;
-    --cyan-light: 103 232 249;
-    --amber: 251 191 36;
-    --amber-light: 254 215 170;
+    --blue: 213 94% 68%;
+    --blue-light: 221 91% 74%;
+    --emerald: 152 76% 64%;
+    --emerald-light: 156 73% 74%;
+    --violet: 258 90% 66%;
+    --violet-light: 262 86% 75%;
+    --orange: 31 91% 60%;
+    --orange-light: 32 98% 70%;
+    --rose: 334 91% 73%;
+    --rose-light: 339 82% 78%;
+    --cyan: 187 85% 70%;
+    --cyan-light: 186 77% 77%;
+    --amber: 54 91% 68%;
+    --amber-light: 48 95% 76%;
 
     /* Dark Sidebar */
-    --sidebar-background: 15 23 42;
-    --sidebar-foreground: 203 213 225;
-    --sidebar-primary: 99 102 241;
-    --sidebar-primary-foreground: 15 23 42;
-    --sidebar-accent: 30 41 59;
-    --sidebar-accent-foreground: 203 213 225;
-    --sidebar-border: 51 65 85;
-    --sidebar-ring: 99 102 241;
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 213 94% 68%;
   }
 }
 
@@ -142,26 +146,30 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Modern component styles */
-  .modern-card {
-    @apply bg-card border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm;
+  /* Ultra Modern Components */
+  .ultra-card {
+    @apply bg-white border border-border/40 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-xl;
   }
 
-  .glass-card {
-    @apply bg-card/80 border border-border/50 rounded-2xl shadow-xl backdrop-blur-md;
+  .glass-effect {
+    @apply bg-white/70 border border-white/20 rounded-3xl shadow-2xl backdrop-blur-xl;
   }
 
-  .gradient-card {
-    @apply bg-gradient-to-br from-card via-card/95 to-accent/10 border border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300;
+  .premium-card {
+    @apply bg-gradient-to-br from-white via-white/95 to-primary/5 border border-border/30 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500;
   }
 
-  /* Fresh gradients */
+  /* Performance-Optimized Gradients */
   .gradient-blue {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--violet)) 100%);
+    background: linear-gradient(135deg, hsl(var(--blue)) 0%, hsl(var(--blue-light)) 100%);
   }
 
   .gradient-emerald {
-    background: linear-gradient(135deg, hsl(var(--emerald)) 0%, hsl(var(--cyan)) 100%);
+    background: linear-gradient(135deg, hsl(var(--emerald)) 0%, hsl(var(--emerald-light)) 100%);
+  }
+
+  .gradient-violet {
+    background: linear-gradient(135deg, hsl(var(--violet)) 0%, hsl(var(--violet-light)) 100%);
   }
 
   .gradient-sunset {
@@ -169,59 +177,67 @@ All colors MUST be HSL.
   }
 
   .gradient-ocean {
-    background: linear-gradient(135deg, hsl(var(--cyan)) 0%, hsl(var(--violet)) 100%);
+    background: linear-gradient(135deg, hsl(var(--cyan)) 0%, hsl(var(--blue)) 100%);
   }
 
-  /* Hero patterns */
-  .hero-mesh {
-    background: radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, hsl(var(--emerald) / 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, hsl(var(--violet) / 0.03) 0%, transparent 50%);
+  .gradient-aurora {
+    background: linear-gradient(135deg, hsl(var(--violet)) 0%, hsl(var(--cyan)) 50%, hsl(var(--emerald)) 100%);
   }
 
-  /* Interactive elements */
-  .hover-lift {
-    @apply hover:-translate-y-1 hover:shadow-xl transition-all duration-300;
+  /* Hero Effects */
+  .mesh-gradient {
+    background: 
+      radial-gradient(circle at 20% 20%, hsl(var(--blue) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--emerald) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 70%, hsl(var(--violet) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, hsl(var(--orange) / 0.06) 0%, transparent 50%);
   }
 
-  .hover-glow {
-    @apply hover:shadow-lg hover:shadow-primary/25 transition-all duration-300;
+  /* Ultra Smooth Animations */
+  .smooth-hover {
+    @apply hover:scale-105 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 ease-out;
   }
 
-  /* Ad containers */
-  .ad-container {
-    @apply min-h-[200px] bg-gradient-to-br from-muted/30 to-accent/20 rounded-xl border border-dashed border-border/50 flex items-center justify-center text-xs text-muted-foreground;
+  .micro-interaction {
+    @apply hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 ease-out;
   }
 
-  .ad-container-horizontal {
-    @apply min-h-[80px] bg-gradient-to-r from-muted/30 to-accent/20 rounded-xl border border-dashed border-border/50 flex items-center justify-center text-xs text-muted-foreground;
+  .pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
   }
 
-  /* Spacing utilities */
-  .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
+  .float-gentle {
+    animation: float-gentle 8s ease-in-out infinite;
   }
 
-  .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+  .glow-effect {
+    @apply shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-shadow duration-300;
   }
 
-  /* Enhanced animations */
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
+  /* Responsive Utilities */
+  .section-spacing {
+    @apply py-20 md:py-24 lg:py-32;
   }
 
-  .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  .container-fluid {
+    @apply px-6 sm:px-8 lg:px-12 xl:px-16;
   }
 
-  @keyframes float {
+  /* Performance Animations */
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+  }
+
+  @keyframes float-gentle {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    33% { transform: translateY(-8px); }
+    66% { transform: translateY(4px); }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.1); }
-    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.2); }
+  /* Hardware Accelerated */
+  .hw-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
   }
 }

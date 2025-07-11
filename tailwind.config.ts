@@ -66,7 +66,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Modern color palette
+				// Ultra Modern Color Palette
+				blue: {
+					DEFAULT: 'hsl(var(--blue))',
+					light: 'hsl(var(--blue-light))',
+				},
 				emerald: {
 					DEFAULT: 'hsl(var(--emerald))',
 					light: 'hsl(var(--emerald-light))',
