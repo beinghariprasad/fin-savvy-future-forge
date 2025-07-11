@@ -86,7 +86,7 @@ export default function CompoundInterestPage() {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="bg-background">
         <div className="container mx-auto container-padding section-padding">
           {/* Calculator */}
           <CompoundInterestCalculator />
